@@ -18,12 +18,14 @@ body {
 
 button {
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .wrapper {
     width: 100%;
     max-width: 1720px;
     margin: 0 auto;
+    padding: 0 40px;
 }
 
 .flex {
@@ -154,6 +156,11 @@ main {
     height: auto;
 }
 
+.right_main .swiper img {
+    width: 100%;
+    height: 100%;
+}
+
 .left_main {
     display: flex;
     flex-direction: column;
@@ -249,6 +256,11 @@ h2 .green {
     max-width: 540px;
 }
 
+.advantages_left {
+    width: 100%;
+    max-width: 845px;
+}
+
 .ad_green_box {
     background: url(../img/ad_green_bg.png);
     background-repeat: no-repeat;
@@ -325,8 +337,12 @@ h2 .green {
 }
 
 .services_left .services_top .services_box {
-    width: 100%;
+    flex: 1 1 calc(50% - 15px);
+    /* 2 блока в строке с учетом gap */
+    min-width: 260px;
+    /* не сжимается меньше 260px */
     max-width: 407px;
+    /* не растягивается больше 407px */
     height: 300px;
 }
 
@@ -397,6 +413,7 @@ h2 .green {
     background-image: url(../img/gid_left.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: right;
     width: 100%;
     max-width: 845px;
     height: 500px;
@@ -430,8 +447,12 @@ h2 .green {
 }
 
 .gid_box {
-    width: 100%;
+    flex: 1 1 calc(50% - 15px);
+    /* 2 блока в строке (50% - половина gap) */
+    min-width: 260px;
+    /* не сжимается меньше */
     max-width: 407px;
+    /* не растягивается больше */
     height: 234px;
     border-radius: 20px;
     padding: 30px;
@@ -705,4 +726,220 @@ footer .logo {
     line-height: 22px;
     border-bottom: 1px solid #fff;
     color: #FFFFFF;
+}
+
+@media (max-width: 1580px) {
+    h1,
+    .h1 {
+        font-size: 45px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .green_box {
+        padding: 30px 20px 20px;
+    }
+    .green_box .box_info p {
+        margin-top: 20px;
+    }
+    main {
+        padding-bottom: 60px;
+    }
+    section {
+        padding: 60px 0 !important;
+    }
+    .ad_green_box,
+    .ad_bottom_box {
+        border-radius: 30px;
+    }
+    .advantages_left img {
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .title {
+        margin-bottom: 30px;
+    }
+    .ad_green_box {
+        padding: 25px;
+    }
+    .ser_box_img {
+        object-fit: contain !important;
+    }
+    .services_bottom {
+        height: auto;
+    }
+    .services_right .services_top {
+        height: auto;
+        min-height: 420px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    .services_left .services_top .services_box {
+        min-height: 120px;
+        height: auto;
+    }
+    .gid {
+        height: auto;
+        gap: 20px;
+    }
+    .gid_right {
+        gap: 20px;
+    }
+    .gid_left {
+        height: auto;
+    }
+    .gid_box {
+        height: auto;
+    }
+    .gid_left .gid_left_content {
+        max-width: 340px;
+    }
+    footer {
+        padding: 50px 0;
+    }
+    .footer_bottom {
+        padding-top: 30px;
+    }
+    .footer_top {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .left_header {
+        gap: 40px;
+    }
+    .left_header ul {
+        gap: 20px;
+    }
+    .link_social {
+        gap: 10px;
+    }
+    .yellow_btn {
+        padding: 16.5px 30px;
+    }
+    main {
+        padding-top: 20px;
+    }
+    h1,
+    .h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .green_box .box_info p {
+        margin-bottom: 20px;
+    }
+    .left_main {
+        gap: 20px;
+    }
+    .main {
+        gap: 20px;
+    }
+    .bottom_box {
+        padding: 20px;
+        gap: 15px;
+    }
+    .white_btn {
+        padding: 11.5px 40px;
+    }
+    section {
+        padding: 40px 0 !important;
+    }
+    .advantages_left {
+        max-width: 40%;
+    }
+    .advantages {
+        align-items: start;
+    }
+    .advantages_box {
+        gap: 20px;
+    }
+    .advantages_right {
+        gap: 20px;
+    }
+    .ad_bottom_box,
+    .ad_green_box {
+        min-height: 150px;
+        padding: 20px;
+    }
+    .ad_green_box {
+        gap: 15px;
+    }
+    .services_left .services_top .services_box {
+        min-width: 200px;
+    }
+    .services_top,
+    .services_right,
+    .services_bottom {
+        gap: 20px;
+    }
+    .services_box h3 {
+        padding: 20px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    .services_box_form .yellow_btn {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    .services_box_form {
+        align-items: start;
+    }
+    .services_right .services_top {
+        min-height: 395px;
+    }
+    .gid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gid_left {
+        max-width: unset;
+        height: 400px;
+        background-position: right top;
+    }
+    .gid_right {
+        max-width: unset;
+    }
+    .gid_box {
+        max-width: unset;
+    }
+    .reviews_card {
+        min-height: 260px;
+        border-radius: 30px;
+    }
+    .reviews_card {
+        gap: 30px;
+    }
+    .contact_right form input {
+        padding: 11.5px 9.5px;
+    }
+    .info_contact a {
+        font-size: 16px;
+    }
+    .contact {
+        gap: 30px;
+        align-items: end;
+    }
+    .map {
+        min-height: 300px;
+        max-width: 40%;
+    }
+    .map iframe {
+        min-height: 300px;
+    }
+    .footer_content div:nth-child(4) {
+        display: none;
+    }
 }
