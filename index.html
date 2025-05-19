@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Отключитесь от города. Включите природу.</title>
 
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" target="_blank" href="css/style.css">
 </head>
 
@@ -16,23 +16,51 @@
             <div class="header">
                 <div class="left_header flex">
                     <a class="logo" target="_blank" href="/">LOGO</a>
-                    <ul class="flex">
-                        <li><a target="_blank" href="">Преимущества</a></li>
-                        <li><a target="_blank" href="">Услуги</a></li>
-                        <li><a target="_blank" href="">Ваш гид</a></li>
-                        <li><a target="_blank" href="">Отзывы</a></li>
-                        <li><a target="_blank" href="">Контакты</a></li>
-                    </ul>
+                    <nav class="desktop_nav">
+                        <ul class="flex">
+                            <li><a target="_blank" href="">Преимущества</a></li>
+                            <li><a target="_blank" href="">Услуги</a></li>
+                            <li><a target="_blank" href="">Ваш гид</a></li>
+                            <li><a target="_blank" href="">Отзывы</a></li>
+                            <li><a target="_blank" href="">Контакты</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="right_header flex">
-                    <div class="link_social flex">
+                    <div class="desktop_social link_social flex">
                         <a target="_blank" href=""><img src="./img/wa.svg" alt=""></a>
                         <a target="_blank" href=""><img src="./img/vk.svg" alt=""></a>
                         <a target="_blank" href=""><img src="./img/tg.svg" alt=""></a>
                     </div>
-                    <button class="yellow_btn">Забронировать место</button>
+                    <button class="yellow_btn open-modal-btn" data-modal="book-place">Забронировать место</button>
+
+                    <!-- Бургер-кнопка -->
+                    <button class="burger-btn" aria-label="Меню">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a target="_blank" href="">Преимущества</a></li>
+                    <li><a target="_blank" href="">Услуги</a></li>
+                    <li><a target="_blank" href="">Ваш гид</a></li>
+                    <li><a target="_blank" href="">Отзывы</a></li>
+                    <li><a target="_blank" href="">Контакты</a></li>
+                </ul>
+
+                <div class="mobile-social link_social flex">
+                    <a target="_blank" href=""><img src="./img/wa.svg" alt="WhatsApp"></a>
+                    <a target="_blank" href=""><img src="./img/vk.svg" alt="VKontakte"></a>
+                    <a target="_blank" href=""><img src="./img/tg.svg" alt="Telegram"></a>
+                </div>
+            </nav>
         </div>
     </header>
     <main>
@@ -43,7 +71,7 @@
                         <h1>Отключитесь от города. Включите природу.</h1>
                         <div class="box_info">
                             <p>Уединение в лесу, сплав по реке, палатки, рыбалка и жизнь без суеты — в сопровождении опытного лесника, который знает каждую тропу. Настоящее приключение для тех, кто хочет перезагрузиться.</p>
-                            <button class="white_btn">Забронировать место</button>
+                            <button class="white_btn open-modal-btn" data-modal="book-place">Забронировать место</button>
                         </div>
                     </div>
                     <div class="bottom_box">
@@ -51,13 +79,18 @@
 
                         <div class="box_info">
                             <p>Позвоните прямо сейчас и получите личную консультацию от лесника</p>
-                            <button class="yellow_btn">Позвонить</button>
+                            <button class="yellow_btn open-modal-btn" data-modal="ask-forester">Позвонить</button>
                         </div>
                     </div>
                 </div>
                 <div class="right_main">
-                    <div class="swiper">
-                        <img src="./img/s1.png" alt="">
+                    <div class="swiper mainSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./img/s1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="./img/s1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="./img/s1.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
@@ -89,7 +122,7 @@
                         <h3>Настоящая природа</h3>
                         <div class="box_info">
                             <p>Глушь, где не ловит сеть.<br> Лес, река, костёр и ни одной лишней мысли.</p>
-                            <button class="yellow_btn">Забронировать место</button>
+                            <button class="yellow_btn open-modal-btn" data-modal="book-place">Забронировать место</button>
                         </div>
                     </div>
                 </div>
@@ -140,7 +173,7 @@
                         <div class="services_box services_box_form">
                             <img src="./img/services_form.png" alt="">
                             <h3>Оставьте заявку — и мы подберём формат под ваш ритм и интересы</h3>
-                            <button class="yellow_btn">Оставить заявку</button>
+                            <button class="yellow_btn open-modal-btn" data-modal="leave-request">Оставить заявку</button>
                         </div>
                         <div class="services_box">
                             <img src="./img/services_img.png" alt="">
@@ -167,7 +200,7 @@
                         </p>
                     </div>
                     <div class="gid_left_btn">
-                        <button class="yellow_btn">Задать вопрос</button>
+                        <button class="yellow_btn open-modal-btn" data-modal="ask-forester">Задать вопрос</button>
                     </div>
                 </div>
                 <div class="gid_right">
@@ -209,19 +242,104 @@
                             </button>
                 </div>
             </div>
-            <div class="reviews">
-                <div class="reviews_card">
-                    <div class="reviews_title">
-                        <div class="avatar">
-                            <img src="./img/services_img.png" alt="">
+            <div class="reviews-slider">
+                <div class="swiper swiperReviews">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_title">
+                                    <div class="avatar">
+                                        <img src="./img/services_img.png" alt="">
+                                    </div>
+                                    <div class="user_info">
+                                        <h3>Алексей, 37 лет</h3>
+                                    </div>
+                                </div>
+                                <div class="reviews_text">
+                                    <p>«Это был не просто отдых — это было возвращение к себе. Ни интернета, ни звонков, только костёр, тишина и настоящий разговор с природой. Лесник — человек с душой, таких уже мало.»</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="user_info">
-                            <h3>Алексей, 37 лет</h3>
+
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_title">
+                                    <div class="avatar">
+                                        <img src="./img/services_img.png" alt="">
+                                    </div>
+                                    <div class="user_info">
+                                        <h3>Мария, 29 лет</h3>
+                                    </div>
+                                </div>
+                                <div class="reviews_text">
+                                    <p>«Невероятный опыт! Полностью отключилась от городской суеты. Природа, свежий воздух и уютная атмосфера - всё что нужно для перезагрузки.»</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_title">
+                                    <div class="avatar">
+                                        <img src="./img/services_img.png" alt="">
+                                    </div>
+                                    <div class="user_info">
+                                        <h3>Мария, 29 лет</h3>
+                                    </div>
+                                </div>
+                                <div class="reviews_text">
+                                    <p>«Невероятный опыт! Полностью отключилась от городской суеты. Природа, свежий воздух и уютная атмосфера - всё что нужно для перезагрузки.»</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_title">
+                                    <div class="avatar">
+                                        <img src="./img/services_img.png" alt="">
+                                    </div>
+                                    <div class="user_info">
+                                        <h3>Мария, 29 лет</h3>
+                                    </div>
+                                </div>
+                                <div class="reviews_text">
+                                    <p>«Невероятный опыт! Полностью отключилась от городской суеты. Природа, свежий воздух и уютная атмосфера - всё что нужно для перезагрузки.»</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_title">
+                                    <div class="avatar">
+                                        <img src="./img/services_img.png" alt="">
+                                    </div>
+                                    <div class="user_info">
+                                        <h3>Мария, 29 лет</h3>
+                                    </div>
+                                </div>
+                                <div class="reviews_text">
+                                    <p>«Невероятный опыт! Полностью отключилась от городской суеты. Природа, свежий воздух и уютная атмосфера - всё что нужно для перезагрузки.»</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_title">
+                                    <div class="avatar">
+                                        <img src="./img/services_img.png" alt="">
+                                    </div>
+                                    <div class="user_info">
+                                        <h3>Мария, 29 лет</h3>
+                                    </div>
+                                </div>
+                                <div class="reviews_text">
+                                    <p>«Невероятный опыт! Полностью отключилась от городской суеты. Природа, свежий воздух и уютная атмосфера - всё что нужно для перезагрузки.»</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="reviews_text">
-                        <p>«Это был не просто отдых — это было возвращение к себе. Ни интернета, ни звонков, только костёр, тишина и настоящий разговор с природой. Лесник — человек с душой, таких уже мало.»</p>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -312,6 +430,69 @@
             </div>
         </div>
     </footer>
+    <!-- Модальное окно "Забронировать место" -->
+    <div class="modal" data-modal-content="book-place">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Забронировать<br> место</h2>
+            <p>Заполните форму, и менеджер свяжется с вами для подбора дат</p>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="forester-name" required placeholder="Ваше имя">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="forester-email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="forester-phone" required placeholder="Номер телефона">
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно "Оставить заявку" -->
+    <div class="modal" data-modal-content="leave-request">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Оставить <br> заявку</h2>
+            <p>Заполните форму, и менеджер поможет подобрать подходящий формат именно для вас</p>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="forester-name" required placeholder="Ваше имя">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="forester-email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="forester-phone" required placeholder="Номер телефона">
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно "Задать вопрос леснику" -->
+    <div class="modal" data-modal-content="ask-forester">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Задать вопрос <br> леснику</h2>
+            <p>Оставьте свои данные и лесник <br> лично вам перезвонит</p>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="forester-name" required placeholder="Ваше имя">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="forester-email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="forester-phone" required placeholder="Номер телефона">
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
